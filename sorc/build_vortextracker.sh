@@ -22,9 +22,9 @@ if [ $target = wcoss ]; then
     echo "Does not support wcoss phase 1/2."
     exit 1
 
-elif [ $target = theia ]; then
+elif [ $target = hera ]; then
 
-    targetx=theia
+    targetx=hera
     #source ../modulefiles/modulefile.vortextracker.$target > /dev/null 2>&1
     module use ../modulefiles
     module load modulefile.vortextracker.$target
@@ -34,9 +34,9 @@ elif [ $target = theia ]; then
     export F90=ifort
     export CC=icc
 
-elif [ $target = hera ]; then
+elif [ $target = theia ]; then
 
-    targetx=hera
+    targetx=theia
     #source ../modulefiles/modulefile.vortextracker.$target > /dev/null 2>&1
     module use ../modulefiles
     module load modulefile.vortextracker.$target
