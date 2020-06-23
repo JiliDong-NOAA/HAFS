@@ -141,7 +141,7 @@ cp ${PARMforecast}/input_nest02.nml.tmp .
 cp ${PARMforecast}/model_configure.tmp .
 cp ${PARMforecast}/nems.configure .
 
-ccpp_suite_glob_xml="${HOMEhafs}/sorc/hafs_forecast.fd/FV3/ccpp/suites/suite_${ccpp_suite_glob}.xml"
+ccpp_suite_glob_xml="/mnt/lfs1/HFIP/hwrfv3/Jili.Dong/ufs-weather-model/ufs-weather-model/FV3/ccpp/suites/suite_${ccpp_suite_glob}.xml"
 cp ${ccpp_suite_glob_xml} .
 
 glob_pes=$(( ${glob_layoutx} * ${glob_layouty} * 6 ))
@@ -219,7 +219,9 @@ cp ${PARMforecast}/input.nml.tmp .
 cp ${PARMforecast}/model_configure.tmp .
 cp ${PARMforecast}/nems.configure .
 
-ccpp_suite_regional_xml="${HOMEhafs}/sorc/hafs_forecast.fd/FV3/ccpp/suites/suite_${ccpp_suite_regional}.xml"
+#ccpp_suite_regional_xml="${HOMEhafs}/sorc/hafs_forecast.fd/FV3/ccpp/suites/suite_${ccpp_suite_regional}.xml"
+ccpp_suite_regional_xml="/mnt/lfs1/HFIP/hwrfv3/Jili.Dong/ufs-weather-model/ufs-weather-model/FV3/ccpp/suites/suite_${ccpp_suite_regional}.xml"
+
 cp ${ccpp_suite_regional_xml} .
 
 sed -e "s/_fhmax_/${NHRS}/g" \

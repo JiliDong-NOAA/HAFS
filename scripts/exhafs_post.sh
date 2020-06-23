@@ -123,6 +123,19 @@ cp ${PARMhafs}/post/params_grib2_tbl_new    ./params_grib2_tbl_new
 #cp ${POSTEXEC} ./post.x
 ln -sf ${POSTEXEC} ./post.x
 ${APRUNC} ./post.x < itag > outpost_${NEWDATE}
+export err=$?
+
+#fallback:
+ntry=1
+ntrymax=5
+##export err=$?
+while [[ $err -ne 0 && $ntry -le $ntrymax ]]; do
+echo "this is fallback try "  $ntry
+${APRUNC} ./post.x < itag > outpost_${NEWDATE}
+export err=$?
+ntry=`expr $ntry + 1`
+done # end of try
+
 
 mv HURPRS.GrbF${FHR2} ${synop_grb2post} 
 

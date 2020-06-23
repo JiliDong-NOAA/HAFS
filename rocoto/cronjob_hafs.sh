@@ -13,18 +13,19 @@ date
 #PYTHON3=/opt/intel/intelpython3/bin/python3
 
 # NOAA RDHPCS Jet
-#HOMEhafs=/mnt/lfs4/HFIP/hwrfv3/${USER}/HAFS
-#dev="-s sites/xjet.ent -f"
-#PYTHON3=/apps/intel/intelpython3/bin/python3
+HOMEhafs=/mnt/lfs4/HFIP/hwrfv3/${USER}/HAFS_community_fork_20200504/HAFS
+dev="-s sites/xjet.ent -f"
+PYTHON3=/apps/intel/intelpython3/bin/python3
 
 # NOAA RDHPCS Hera
- HOMEhafs=/scratch1/NCEPDEV/hwrf/save/${USER}/HAFS
- dev="-s sites/hera.ent -f"
- PYTHON3=/apps/intel/intelpython3/bin/python3
+# HOMEhafs=/scratch1/NCEPDEV/hwrf/save/${USER}/HAFS
+# dev="-s sites/hera.ent -f"
+# PYTHON3=/apps/intel/intelpython3/bin/python3
 
 cd ${HOMEhafs}/rocoto
 
 EXPT=$(basename ${HOMEhafs})
+scrubopt="config.scrub_work=no config.scrub_com=no"
 
 #===============================================================================
 # Here are some simple examples, more examples can be seen in cronjob_hafs_rt.sh
@@ -37,7 +38,21 @@ EXPT=$(basename ${HOMEhafs})
 #   config.EXPT=${EXPT} config.SUBEXPT=${EXPT}_try1 # Florence
 
 # Run one cycle of a storm
- ${PYTHON3} ./run_hafs.py -t ${dev} 2019091600 09L HISTORY config.EXPT=${EXPT}
+## ${PYTHON3} ./run_hafs.py -t ${dev} 2019090200 00L HISTORY config.EXPT=${EXPT}
+
+# ${PYTHON3} ./run_hafs.py -t ${dev} 2019082812 00L HISTORY \
+#     config.EXPT=${EXPT} config.SUBEXPT=${EXPT}_esg3122_grib2ab_lbc \
+#     config.ictype=gfsnemsio config.bctype=gfsgrib2ab_0p25 \
+#     config.NHRS=126 ${scrubopt} \
+#     ../parm/hafs_regional_static.conf
+
+ ${PYTHON3} ./run_hafs.py -t ${dev} 2019082412-2019090718 00L HISTORY \
+     config.EXPT=${EXPT} config.SUBEXPT=${EXPT}_esg3122_ctrl \
+     config.ictype=gfsnemsio config.bctype=gfsgrib2ab_0p25 \
+     config.NHRS=126 ${scrubopt} \
+     ../parm/hafs_regional_static.conf
+
+
 
 #===============================================================================
 

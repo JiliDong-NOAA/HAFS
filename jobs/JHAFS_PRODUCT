@@ -68,6 +68,8 @@ if [ "$RUN_ENVIR" = prod ]; then
   #module load modulefile.hafs.run.${machine}
   module list
 fi
+  module use ${HOMEhafs}/modulefiles
+  module load modulefile.vortextracker.${machine}
 
 #####################################
 # Set up job node/core/run environment variables

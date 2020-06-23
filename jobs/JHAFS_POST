@@ -72,10 +72,15 @@ if [ "$RUN_ENVIR" = prod ]; then
     module unload NetCDF
     module unload HDF5-serial
   fi
-  module use ${HOMEhafs}/sorc/hafs_post.fd/modulefiles
-  module load post/v8.0.0-${machine}
-  module list
+#  module use ${HOMEhafs}/sorc/hafs_post.fd/modulefiles
+#  module load post/v8.0.0-${machine}
+#  module list
 fi
+
+  module use /mnt/lfs4/HFIP/hwrfv3/Jili.Dong/UPP_upstream/EMC_post/modulefiles
+  module load post/v8.0.0-jet
+  module list
+
 
 #####################################
 # Set up job node/core/run environment variables

@@ -54,7 +54,7 @@
        fv_debug = .F.
        range_warn = .T.
        reset_eta = .F.
-       n_sponge = 24
+       n_sponge = 14
        nudge_qv = .F.
        nudge_dz = .F.
        tau = 5.
@@ -71,7 +71,7 @@
        beta = 0.
        a_imp = 1.
        p_fac = 0.1
-       k_split  = 4
+       k_split  = 3 
        n_split  = 5
        nwat = 6
        na_init = 1
@@ -119,6 +119,10 @@
        stretch_fac = _stretch_fac_
        regional = .true.
        bc_update_interval = _bc_update_interval_
+       regional_bcs_from_gsi = .false.
+       write_restart_with_bcs = .false.
+       nrows_blend = 10
+
 
        full_zs_filter = .F. !unreleased feature
        n_zs_filter = 0 ! safety

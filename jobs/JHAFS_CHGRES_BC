@@ -60,6 +60,12 @@ if [ "$RUN_ENVIR" = prod ]; then
   module list
 fi
 
+#  module use /mnt/lfs4/HFIP/hwrfv3/Jili.Dong/HAFS_community_fork_20200504/HAFS/sorc/hafs_utils.fd/modulefiles
+#  module load chgres_cube.jet_setenv
+
+   module use /mnt/lfs4/HFIP/hwrfv3/Jili.Dong/UFS_UTILS_upstream/UFS_UTILS/modulefiles
+   module load build.jet_setenv
+
 #####################################
 # Set up job node/core/run environment variables
 #####################################

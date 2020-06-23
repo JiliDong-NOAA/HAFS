@@ -6,13 +6,13 @@
 
   <!ENTITY COM_SCRUB_TIME "21600">
   <!ENTITY WORK_SCRUB_TIME "10800">
-  <!ENTITY CYCLE_THROTTLE "7">
-  <!ENTITY TASK_THROTTLE "40">
+  <!ENTITY CYCLE_THROTTLE "6">
+  <!ENTITY TASK_THROTTLE "50">
 
   <!-- Maximum number of times to try various jobs -->
   <!ENTITY MAX_TRIES_TRANSFER "6"> <!-- pulling data over network -->
   <!ENTITY MAX_TRIES_BIG_JOBS "1"> <!-- forecast or other huge jobs -->
-  <!ENTITY MAX_TRIES "1"> <!-- everything else -->
+  <!ENTITY MAX_TRIES "5"> <!-- everything else -->
 
  <!-- Extra variables to send to the exhwrf_launch.py -->
   <!ENTITY MORE_LAUNCH_VARS "@[MORE_LAUNCH_VARS]">
@@ -424,7 +424,7 @@
       <and>
         <taskdep task="archive_tape"/>
         <taskdep task="archive_disk"/>
-        <datadep age="&WORK_SCRUB_TIME;"><cyclestr>&COMhafs;/&STORMLABEL;.done</cyclestr></datadep>
+        <!--<datadep age="&WORK_SCRUB_TIME;"><cyclestr>&COMhafs;/&STORMLABEL;.done</cyclestr></datadep>
         <or>
           <not><cycleexistdep cycle_offset="6:00:00"/></not>
           <taskdep task="forecast" state="RUNNING" cycle_offset="6:00:00"/>
@@ -434,7 +434,7 @@
         <or>
           <strneq><left>&ARCHIVE_FV3OUT;</left><right>YES</right></strneq>
           <taskdep task="archive_fv3out"/>
-        </or>
+        </or> -->
       </and>
     </dependency>
   </task>
@@ -459,7 +459,11 @@
       <!-- Next cycle has finished its initialization OR this cycle is the last cycle,
            AND this cycle's archive and output jobs are complete. -->
       <and>
-        <or>
+        <taskdep task="archive_tape"/>
+        <taskdep task="archive_disk"/>
+        <taskdep task="scrub_work"/>
+
+        <!-- <or>
           <not><cycleexistdep cycle_offset="6:00:00"/></not>
           <and>
             <taskdep task="archive_tape" cycle_offset="6:00:00"/>
@@ -475,7 +479,7 @@
           <taskdep task="archive_fv3out"/>
         </or>
         <taskdep task="scrub_work"/>
-        <datadep age="&COM_SCRUB_TIME;"><cyclestr>&COMhafs;/&STORMLABEL;.done</cyclestr></datadep>
+        <datadep age="&COM_SCRUB_TIME;"><cyclestr>&COMhafs;/&STORMLABEL;.done</cyclestr></datadep> -->
       </and>
     </dependency>
   </task>

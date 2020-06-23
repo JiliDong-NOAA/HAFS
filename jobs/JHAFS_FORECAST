@@ -102,11 +102,18 @@ if [ "$RUN_ENVIR" = prod ]; then
     module unload NetCDF
     module unload HDF5-serial
   fi
-  module use ${HOMEhafs}/sorc/hafs_forecast.fd/modulefiles/${machine}
+#  module use ${HOMEhafs}/sorc/hafs_forecast.fd/modulefiles/${machine}
+#  module load fv3
+#  module list
+#  export LD_LIBRARY_PATH="$HOMEhafs/sorc/hafs_forecast.fd/FV3/ccpp/lib::${LD_LIBRARY_PATH}"
+
+fi
+
+  module use /mnt/lfs1/HFIP/hwrfv3/Jili.Dong/ufs-weather-model/ufs-weather-model/modulefiles/jet.intel
   module load fv3
   module list
-  export LD_LIBRARY_PATH="$HOMEhafs/sorc/hafs_forecast.fd/FV3/ccpp/lib::${LD_LIBRARY_PATH}"
-fi
+  export LD_LIBRARY_PATH="/mnt/lfs1/HFIP/hwrfv3/Jili.Dong/ufs-weather-model/ufs-weather-model/FV3/ccpp/lib::${LD_LIBRARY_PATH}"
+
 
 #####################################
 # Set up job node/core/run environment variables

@@ -193,6 +193,7 @@ if [ $gtype = regional ]; then
    echo "WARNING: Wrong gtype: $gtype REGIONAL: $REGIONAL combination"
  fi
  halo_bndy=4
+ halo_blend=20
 else
   echo "Error: please specify grid type with 'gtype' as uniform, stretch, nest, or regional"
   exit 9
@@ -206,7 +207,7 @@ cat>./fort.41<<EOF
  fix_dir_target_grid="$FIXDIR/$CASE"
  orog_dir_target_grid="$FIXDIR/$CASE"
  orog_files_target_grid=${orog_files_target_grid}
- vcoord_file_target_grid="${FIXhafs}/fix_am/global_hyblev.l65.txt"
+ vcoord_file_target_grid="/mnt/lfs4/HFIP/hwrfv3/Jili.Dong/hafs_l75/global_hyblev.l75_hafs.txt" 
  mosaic_file_input_grid="NULL"
  orog_dir_input_grid="NULL"
  orog_files_input_grid="NULL"
@@ -226,6 +227,7 @@ cat>./fort.41<<EOF
  tracers_input=${tracers_input}
  regional=${regional}
  halo_bndy=${halo_bndy}
+ halo_blend=${halo_blend}
 /
 EOF
 

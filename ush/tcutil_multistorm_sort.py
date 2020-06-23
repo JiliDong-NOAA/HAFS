@@ -64,7 +64,7 @@ vitfiles=[
     '/gpfs/gp1/nco/ops/com/arch/prod/syndat/syndat_tcvitals.%Y',
     '/gpfs/tp1/nco/ops/com/arch/prod/syndat/syndat_tcvitals.%Y',
     '/com/arch/prod/syndat/syndat_tcvitals.%Y',
-    '/lfs3/projects/hwrf-data/hwrf-input/SYNDAT-PLUS/syndat_tcvitals.%Y',
+    '/lfs4/HFIP/hwrf-data/hwrf-input/SYNDAT-PLUS/syndat_tcvitals.%Y',
     '/scratch3/NCEPDEV/hwrf/noscrub/input/SYNDAT-PLUS/syndat_tcvitals.%Y',
     '/scratch1/NCEPDEV/hwrf/noscrub/input/SYNDAT-PLUS/syndat_tcvitals.%Y']
 
