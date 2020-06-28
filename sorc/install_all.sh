@@ -20,74 +20,74 @@ fi
 #------------------------------------
 # install forecast
 #------------------------------------
-#$Build_forecast && {
-#  ${CP} hafs_forecast.fd/NEMS/exe/NEMS.x             ../exec/hafs_forecast.x
-#}
+$Build_forecast && {
+  ${CP} hafs_forecast.fd/NEMS/exe/NEMS.x             ../exec/hafs_forecast.x
+}
 
 #------------------------------------
 # install chgres
 #------------------------------------
-$Build_chgres && {
-  ${CP} hafs_utils.fd/exec/global_chgres             ../exec/hafs_chgres.x
-}
+#$Build_chgres && {
+#  ${CP} hafs_utils.fd/exec/global_chgres             ../exec/hafs_chgres.x
+#}
 
 #------------------------------------
 # install chgres_cube
 #------------------------------------
 $Build_chgres_cube && {
-  ${CP} hafs_utils.fd/exec/chgres_cube.exe           ../exec/hafs_chgres_cube.x
+  ${CP} hafs_utils.fd/exec/chgres_cube           ../exec/hafs_chgres_cube.x
 }
 
 #------------------------------------
 # install orog
 #------------------------------------
-$Build_orog && {
-  ${CP} hafs_utils.fd/exec/orog.x                    ../exec/hafs_orog.x
-}
+#$Build_orog && {
+#  ${CP} hafs_utils.fd/exec/orog.x                    ../exec/hafs_orog.x
+#}
 
 #------------------------------------
 # install sfc_climo_gen
 #------------------------------------
-$Build_sfc_climo_gen && {
-  ${CP} hafs_utils.fd/exec/sfc_climo_gen             ../exec/hafs_sfc_climo_gen.x
-}
+#$Build_sfc_climo_gen && {
+#  ${CP} hafs_utils.fd/exec/sfc_climo_gen             ../exec/hafs_sfc_climo_gen.x
+#}
 
 #------------------------------------
 # install regional_grid
 #------------------------------------
-$Build_regional_grid && {
-  ${CP} hafs_utils.fd/exec/regional_grid             ../exec/hafs_regional_grid.x
-}
+#$Build_regional_grid && {
+#  ${CP} hafs_utils.fd/exec/regional_grid             ../exec/hafs_regional_grid.x
+#}
 
 #------------------------------------
 # install fre-nctools
 #------------------------------------
-$Build_nctools && {
-  ${CP} hafs_utils.fd/exec/make_hgrid                ../exec/hafs_make_hgrid.x
-  #${CP} hafs_utils.fd/exec/make_hgrid_parallel       ../exec/hafs_make_hgrid_parallel.x
-  ${CP} hafs_utils.fd/exec/make_solo_mosaic          ../exec/hafs_make_solo_mosaic.x
-  ${CP} hafs_utils.fd/exec/fregrid                   ../exec/hafs_fregrid.x
-  #${CP} hafs_utils.fd/exec/fregrid_parallel          ../exec/hafs_fregrid_parallel.x
-  ${CP} hafs_utils.fd/exec/filter_topo               ../exec/hafs_filter_topo.x
-  ${CP} hafs_utils.fd/exec/shave.x                   ../exec/hafs_shave.x
-}
+#$Build_nctools && {
+#  ${CP} hafs_utils.fd/exec/make_hgrid                ../exec/hafs_make_hgrid.x
+#  #${CP} hafs_utils.fd/exec/make_hgrid_parallel       ../exec/hafs_make_hgrid_parallel.x
+#  ${CP} hafs_utils.fd/exec/make_solo_mosaic          ../exec/hafs_make_solo_mosaic.x
+#  ${CP} hafs_utils.fd/exec/fregrid                   ../exec/hafs_fregrid.x
+#  #${CP} hafs_utils.fd/exec/fregrid_parallel          ../exec/hafs_fregrid_parallel.x
+#  ${CP} hafs_utils.fd/exec/filter_topo               ../exec/hafs_filter_topo.x
+#  ${CP} hafs_utils.fd/exec/shave.x                   ../exec/hafs_shave.x
+#}
 
 #------------------------------------
 # install post
 #------------------------------------
-#$Build_post && {
-#  ${CP} hafs_post.fd/exec/ncep_post                  ../exec/hafs_post.x
-#}
+$Build_post && {
+  ${CP} hafs_post.fd/exec/ncep_post                  ../exec/hafs_post.x
+}
 
 #------------------------------------
 # install vortextracker
 #------------------------------------
-#$Build_vortextracker && {
-#  ${CP} hafs_vortextracker.fd/exec/gettrk.x          ../exec/hafs_gettrk.x
-#  ${CP} hafs_vortextracker.fd/exec/tave.x            ../exec/hafs_tave.x
-#  ${CP} hafs_vortextracker.fd/exec/vint.x            ../exec/hafs_vint.x
-#  ${CP} hafs_vortextracker.fd/exec/supvit.x          ../exec/hafs_supvit.x
-#}
+$Build_vortextracker && {
+  ${CP} hafs_vortextracker.fd/exec/gettrk.x          ../exec/hafs_gettrk.x
+  ${CP} hafs_vortextracker.fd/exec/tave.x            ../exec/hafs_tave.x
+  ${CP} hafs_vortextracker.fd/exec/vint.x            ../exec/hafs_vint.x
+  ${CP} hafs_vortextracker.fd/exec/supvit.x          ../exec/hafs_supvit.x
+}
 
 #------------------------------------
 # install tools

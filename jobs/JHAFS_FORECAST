@@ -109,10 +109,12 @@ if [ "$RUN_ENVIR" = prod ]; then
 
 fi
 
-  module use /mnt/lfs1/HFIP/hwrfv3/Jili.Dong/ufs-weather-model/ufs-weather-model/modulefiles/jet.intel
+  module use ${HOMEhafs}/sorc/hafs_forecast.fd/modulefiles/${machine}.intel
   module load fv3
   module list
-  export LD_LIBRARY_PATH="/mnt/lfs1/HFIP/hwrfv3/Jili.Dong/ufs-weather-model/ufs-weather-model/FV3/ccpp/lib::${LD_LIBRARY_PATH}"
+  export LD_LIBRARY_PATH="$HOMEhafs/sorc/hafs_forecast.fd/FV3/ccpp/lib::${LD_LIBRARY_PATH}"
+
+#  export LD_LIBRARY_PATH="/mnt/lfs1/HFIP/hwrfv3/Jili.Dong/ufs-weather-model/ufs-weather-model/FV3/ccpp/lib::${LD_LIBRARY_PATH}"
 
 
 #####################################

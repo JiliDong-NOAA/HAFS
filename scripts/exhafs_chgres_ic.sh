@@ -177,7 +177,7 @@ cat>./fort.41<<EOF
  fix_dir_target_grid="$FIXDIR/$CASE"
  orog_dir_target_grid="$FIXDIR/$CASE"
  orog_files_target_grid=${orog_files_target_grid}
- vcoord_file_target_grid="/mnt/lfs4/HFIP/hwrfv3/Jili.Dong/hafs_l75/global_hyblev.l75_hafs.txt"
+ vcoord_file_target_grid="${FIXhafs}/fix_am/global_hyblev.l65.txt"
  mosaic_file_input_grid="NULL"
  orog_dir_input_grid="NULL"
  orog_files_input_grid="NULL"

@@ -54,7 +54,7 @@
        fv_debug = .F.
        range_warn = .T.
        reset_eta = .F.
-       n_sponge = 14
+       n_sponge = 24
        nudge_qv = .F.
        nudge_dz = .F.
        tau = 5.
