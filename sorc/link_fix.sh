@@ -16,7 +16,7 @@ elif [ ${target} == "hera" ]; then
 elif [ ${target} == "theia" ]; then
     FIXROOT=/scratch4/NCEPDEV/global/save/glopara/git/fv3gfs/fix
 elif [ ${target} == "jet" ]; then
-    FIXROOT=/mnt/lfs1/projects/hwrf-data/git/fv3gfs/fix
+    FIXROOT=/mnt/lfs1/HFIP/hwrf-data/git/fv3gfs/fix
 else
     echo "Unknown site " ${target}
     exit 1
