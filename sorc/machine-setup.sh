@@ -28,7 +28,7 @@ if [[ -d /lfs4 ]] ; then
     target=jet
     module purge
     #export NCEPLIBS=/mnt/lfs3/HFIP/hfv3gfs/gwv/ljtjet/lib
-    export NCEPLIBS=/mnt/lfs4/HFIP/hfv3gfs/nwprod/NCEPLIBS/lib
+    export NCEPLIBS=/mnt/lfs4/HFIP/hfv3gfs/nwprod/NCEPLIBS
 
     echo NCEPLIBS HARD SET to  $NCEPLIBS in `pwd`/module_setup.sh.inc
     module use $NCEPLIBS/modulefiles
